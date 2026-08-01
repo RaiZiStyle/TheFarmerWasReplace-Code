@@ -1,10 +1,10 @@
 from Plants import plantHay, plantCarrot, plantPumpkin, plantTree
 
-WANTED_PUMPKIN = 5000
-WANTED_WOOD = 15000
+WANTED_PUMPKIN = 10000
+WANTED_WOOD = 54000
 WANTED_CARROT = 3000
-WANTED_HAY = 3000
-    
+WANTED_HAY = 30000
+
 def harvestProcess():
     if can_harvest():
         harvest()
@@ -13,6 +13,7 @@ def harvestProcess():
             print("I'm borded, idk what do to")
             clear()
             do_a_flip()
+            
             
         
 
