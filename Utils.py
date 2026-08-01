@@ -16,7 +16,6 @@ limiteHats = len(myHats)
 
 def random_hat(imIaWizzard=False):
     result_pseudoRandom = randomBaseOnPosition()
-    print(myHats[result_pseudoRandom])
     change_hat(myHats[result_pseudoRandom])
     if imIaWizzard:
         change_hat(Hats.Wizard_Hat)
@@ -31,12 +30,14 @@ def showProgress(last_show: float) -> float:
     now = get_time()
     if now - last_show < PROGRESS_SHOW_TIME:
         return last_show
-
+    index = random() * len(list) // 1
+    need = USER_NEEDS[index]
     for need in USER_NEEDS:            
         currentProgress = num_items(need['NAME']) / need['WANTED']
         currentItem = need["TEXT"]
 #            test = get_entity_type(need["NAME"])
         print("Items :" + str(currentItem) + ",Progress :" + str(currentProgress))
+        quick_print("Items :" + str(currentItem) + ",Progress :" + str(currentProgress))
         return now
 
 
