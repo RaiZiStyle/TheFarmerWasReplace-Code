@@ -6,7 +6,7 @@ def plantCarrot(water=False, fertilizer=False):
     # Plant carrot, if can't, plant tree or grass.
     rc = False
     # Limite to plant carrot
-    if num_items(Items.Wood) >= 10 and num_items(Items.Hay) >= 10:
+    if num_items(Items.Wood) >= 100 and num_items(Items.Hay) >= 100:
         if get_entity_type() == Entities.Grass:
             harvest()
         if not get_ground_type() == Grounds.Soil:
@@ -18,11 +18,11 @@ def plantCarrot(water=False, fertilizer=False):
             rc = True
         return rc
     else:
-        if num_items(Items.Wood) <= 10:
+        if num_items(Items.Wood) <= 100:
             plantTree()
-        elif num_items(Items.Hay) <= 10:
+        elif num_items(Items.Hay) <= 100:
             plant(Entities.Grass)
-        quick_print("can't plant carrot")
+        
         return rc
 
 
@@ -68,4 +68,4 @@ def waterAndFertilizer(water=False, fertilizer=False):
 
 if __name__ == "__main__":
     clear()
-    plantSomething()
+    plantSomething() # type: ignore
