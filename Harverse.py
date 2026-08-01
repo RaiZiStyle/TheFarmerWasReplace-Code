@@ -18,10 +18,10 @@ def harvestProcess():
 
 USER_NEEDS = [
     # {ITEM,PRIO, WANTED
-    {"NAME": Items.Hay, "PRIO": 999, "WANTED": WANTED_HAY, "FUNCTION": plantHay},
-    {"NAME": Items.Wood, "PRIO": 2, "WANTED": WANTED_WOOD, "FUNCTION": plantTree},
-    {"NAME": Items.Carrot, "PRIO": 3, "WANTED": WANTED_CARROT, "FUNCTION": plantCarrot},
-    {"NAME": Items.Pumpkin,"PRIO": 1,"WANTED": WANTED_PUMPKIN,"FUNCTION": plantPumpkin,},
+    {"NAME": Items.Hay, "PRIO": 999, "WANTED": WANTED_HAY, "FUNCTION": plantHay,"TEXT" : "HAY"},
+    {"NAME": Items.Wood, "PRIO": 2, "WANTED": WANTED_WOOD, "FUNCTION": plantTree,"TEXT" :  "WOOD"},
+    {"NAME": Items.Carrot, "PRIO": 3, "WANTED": WANTED_CARROT, "FUNCTION": plantCarrot,"TEXT" : "CARROT" },
+    {"NAME": Items.Pumpkin,"PRIO": 1,"WANTED": WANTED_PUMPKIN,"FUNCTION": plantPumpkin,"TEXT" : "PUMPKIN"},
     #    {"ITEM":Items.Power "PRIO":4,"WANTED":20000, "FUNCTION": plantCarrot},
 ]
 

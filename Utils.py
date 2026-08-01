@@ -1,5 +1,8 @@
-# Not really usefull function here
+from Harverse import USER_NEEDS
 
+# Not really usefull function here
+PROGRESS_SHOW_TIME = 60 # Seconds
+lastProgressShow = get_time()
 myHats = [
     Hats.Carrot_Hat,
     Hats.Green_Hat,
@@ -21,3 +24,24 @@ def random_hat(imIaWizzard=False):
 
 def randomBaseOnPosition():
     return (get_pos_x() + get_pos_y()) % limiteHats
+
+
+def showProgress(last_show: float) -> float:
+    # Print progress for each need. Returns updated timestamp.
+    now = get_time()
+    if now - last_show < PROGRESS_SHOW_TIME:
+        return last_show
+
+    for need in USER_NEEDS:            
+        currentProgress = num_items(need['NAME']) / need['WANTED']
+        currentItem = need["TEXT"]
+#            test = get_entity_type(need["NAME"])
+        print("Items :" + str(currentItem) + ",Progress :" + str(currentProgress))
+        return now
+
+
+
+if __name__ == "__main__":
+    lastProgressShow = get_time()
+    while True:
+        lastProgressShow = showProgress(lastProgressShow)
