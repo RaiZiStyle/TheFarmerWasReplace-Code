@@ -52,9 +52,9 @@ IDLE_PRIO = 999
 
 # TODO SUPPLY
 SUPPLY = [
-    {"ITEM": Items.Water, "PRIO": 1, "WANTED": 20000, "FUNCTION": ""},
-    {"ITEM": Items.Fertilizer, "PRIO": 1, "WANTED": 20000, "FUNCTION": ""},
-    {"ITEM": Items.Weird_Substance, "PRIO": 1, "WANTED": 20000, "FUNCTION": ""},
+    {"ITEM": Items.Water, "PRIO": 1, "WANTED": 1, "FUNCTION": "", "NAME": "WATER"},
+    {"ITEM": Items.Fertilizer, "PRIO": 1, "WANTED": 1, "FUNCTION": "", "NAME": "FERTILIZER"},
+    {"ITEM": Items.Weird_Substance, "PRIO": 1, "WANTED": 20000, "FUNCTION": "", "NAME": "WEIRD_SUBSTANCE"},
 ]
 
 
