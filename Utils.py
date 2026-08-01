@@ -30,17 +30,19 @@ def showProgress(last_show: float) -> float:
     now = get_time()
     if now - last_show < PROGRESS_SHOW_TIME:
         return last_show
-    index = random() * len(USER_NEEDS) // 1
-    need = USER_NEEDS[index]
-    for need in USER_NEEDS:            
-        currentProgress = num_items(need['NAME']) / need['WANTED']
-        currentItem = need["TEXT"]
+    
+    need = random_elem(USER_NEEDS) 
+    currentProgress = num_items(need['NAME']) / need['WANTED']
+    currentItem = need["TEXT"]
+    currentTime = get_time()
 #            test = get_entity_type(need["NAME"])
-        print("Items :" + str(currentItem) + ",Progress :" + str(currentProgress))
-        quick_print("Items :" + str(currentItem) + ",Progress :" + str(currentProgress))
-        return now
+    print("Items :" + str(currentItem) + ",Progress :" + str(currentProgress))
+    quick_print("["+str(currentItem) + "] - " + "Items :" + str(currentItem) + ",Progress :" + str(currentProgress))
+    return now
 
-
+def random_elem(list):
+    index = random() * len(list) // 1
+    return list[index]
 
 if __name__ == "__main__":
     lastProgressShow = get_time()

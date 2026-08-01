@@ -17,7 +17,7 @@ def harvestProcess():
 
 
 USER_NEEDS = [
-    # {ITEM,PRIO, WANTED
+    # {ITEM,PRIO, WANTED, FUNCTION, TEXT (for dbg)}
     {"NAME": Items.Hay, "PRIO": 999, "WANTED": WANTED_HAY, "FUNCTION": plantHay,"TEXT" : "HAY"},
     {"NAME": Items.Wood, "PRIO": 2, "WANTED": WANTED_WOOD, "FUNCTION": plantTree,"TEXT" :  "WOOD"},
     {"NAME": Items.Carrot, "PRIO": 3, "WANTED": WANTED_CARROT, "FUNCTION": plantCarrot,"TEXT" : "CARROT" },
