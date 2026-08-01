@@ -1,3 +1,5 @@
+# How the fuck does my linter in VSCode work direclty with the "__buildins__.py" ?, i don't get it
+
 README = "Avoir une structure qui défini le nombre voulu et la prio de chaque"
 PRIO = "1/2/3, simple"
 HAT="j'arrive pas a voir mes propres hats"
