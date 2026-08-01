@@ -30,7 +30,7 @@ def showProgress(last_show: float) -> float:
     now = get_time()
     if now - last_show < PROGRESS_SHOW_TIME:
         return last_show
-    index = random() * len(list) // 1
+    index = random() * len(USER_NEEDS) // 1
     need = USER_NEEDS[index]
     for need in USER_NEEDS:            
         currentProgress = num_items(need['NAME']) / need['WANTED']
