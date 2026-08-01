@@ -34,9 +34,9 @@ def showProgress(last_show: float, debug=False) -> float:
     time_str = seconds_to_dhms(now)
     separator = "+" + "------------------------------" + "+"
 
-    print(separator)
-    print("| [" + time_str + "] Progress Report")
-    print(separator)
+    quick_print(separator)
+    quick_print("| [" + time_str + "] Progress Report")
+    quick_print(separator)
 
     for need in USER_NEEDS:
         current = num_items(need["NAME"])
@@ -58,9 +58,9 @@ def showProgress(last_show: float, debug=False) -> float:
             + pad_left(percent, 3)
             + "%)"
         )
-        print(line)
+        quick_print(line)
 
-    print(separator)
+    quick_print(separator)
     return now
 
 def repeat_char(char, count):
