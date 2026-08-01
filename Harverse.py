@@ -6,7 +6,7 @@ WANTED_CARROT = 3000
 WANTED_HAY = 30000
 
 
-def harvestProcess():
+def harvestProcess() -> None:
     if can_harvest():
         harvest()
     if not plantProcess():
@@ -18,10 +18,34 @@ def harvestProcess():
 
 USER_NEEDS = [
     # {ITEM,PRIO, WANTED, FUNCTION, TEXT (for dbg)}
-    {"NAME": Items.Pumpkin,"PRIO": 1,"WANTED": WANTED_PUMPKIN,"FUNCTION": plantPumpkin,"TEXT" : "PUMPKIN"},
-    {"NAME": Items.Wood, "PRIO": 2, "WANTED": WANTED_WOOD, "FUNCTION": plantTree,"TEXT" :  "WOOD"},
-    {"NAME": Items.Carrot, "PRIO": 3, "WANTED": WANTED_CARROT, "FUNCTION": plantCarrot,"TEXT" : "CARROT" },
-    {"NAME": Items.Hay, "PRIO": 999, "WANTED": WANTED_HAY, "FUNCTION": plantHay,"TEXT" : "HAY"},
+    {
+        "NAME": Items.Pumpkin,
+        "PRIO": 1,
+        "WANTED": WANTED_PUMPKIN,
+        "FUNCTION": plantPumpkin,
+        "TEXT": "PUMPKIN",
+    },
+    {
+        "NAME": Items.Wood,
+        "PRIO": 2,
+        "WANTED": WANTED_WOOD,
+        "FUNCTION": plantTree,
+        "TEXT": "WOOD",
+    },
+    {
+        "NAME": Items.Carrot,
+        "PRIO": 3,
+        "WANTED": WANTED_CARROT,
+        "FUNCTION": plantCarrot,
+        "TEXT": "CARROT",
+    },
+    {
+        "NAME": Items.Hay,
+        "PRIO": 999,
+        "WANTED": WANTED_HAY,
+        "FUNCTION": plantHay,
+        "TEXT": "HAY",
+    },
 ]
 
 IDLE_PRIO = 999
@@ -34,7 +58,7 @@ SUPPLY = [
 ]
 
 
-def plantProcess():
+def plantProcess() -> bool:
     selected = None
     bestPrio = 999999
 

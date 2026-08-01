@@ -1,0 +1,24 @@
+# ruff.toml
+exclude = [
+    "__builtins__.py",
+    "venv/",
+    ".git/",
+]
+
+[lint]
+ignore = [
+    "F821",  # Undefined name — custom builtins (num_items, get_time, etc.)
+    "F401",  # Imported but unused — __builtins__ customs
+]
+
+select = [
+    "E",    # Style (indentation, spacing)
+    "W",    # Warnings
+    "F",    # Pyflakes (sauf les ignorés)
+    "C90",  # Complexité McCabe
+    "E501",  # Line too long — handled by black
+    "W191", # Indentation contains tabs — handled by black
+]
+
+[lint.mccabe]
+max-complexity = 10

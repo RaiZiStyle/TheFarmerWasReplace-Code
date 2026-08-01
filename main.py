@@ -1,8 +1,9 @@
+from typing import NoReturn
 from Harverse import harvestProcess
 from Utils import random_hat, showProgress
 
 
-def walk_world(processFunction, showProgress=None, lastProgressShow=None):
+def walk_world(processFunction, showProgress=None, lastProgressShow=None) -> None:
     # Default walk function, i got mad without variable so I used the tuto
     for i in range(get_world_size()):
         for j in range(get_world_size()):
@@ -13,7 +14,7 @@ def walk_world(processFunction, showProgress=None, lastProgressShow=None):
         move(East)
 
 
-def main():
+def main() -> NoReturn:
     random_hat(False)
     lastProgressShow = get_time()
     while True:

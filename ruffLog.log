@@ -1,0 +1,33 @@
+E711 Comparison to `None` should be `cond is None`
+  --> Harverse.py:75:20
+   |
+74 |     # Exit if if PRIO is MAX and WANTED is obtain
+75 |     if selected == None:
+   |                    ^^^^
+76 |         return False
+   |
+help: Replace with `cond is None`
+
+F841 Local variable `rc` is assigned to but never used
+  --> Plants.py:42:13
+   |
+40 |         # "Black squares" - plant trees
+41 |         if not plant(Entities.Tree):
+42 |             rc = False
+   |             ^^
+43 |
+44 |         waterAndFertilizer(water, fertilizer)
+   |
+help: Remove assignment to unused variable `rc`
+
+E501 Line too long (98 > 88)
+ --> README.py:1:89
+  |
+1 | # How the fuck does my linter in VSCode work direclty with the "__buildins__.py" ?, i don't get it
+  |                                                                                         ^^^^^^^^^^
+2 | MAIN = "main.py         : Entry point — orchestrates and runs all processes."
+3 | PLANTS = "plants.py       : Per-plant definitions and harvest logic."
+  |
+
+Found 3 errors.
+No fixes available (2 hidden fixes can be enabled with the `--unsafe-fixes` option).

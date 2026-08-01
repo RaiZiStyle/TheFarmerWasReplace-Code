@@ -1,8 +1,8 @@
-def plantHay(water=False, fertilizer=False):
+def plantHay(water=False, fertilizer=False) -> None:
     plant(Entities.Grass)
 
 
-def plantCarrot(water=False, fertilizer=False):
+def plantCarrot(water=False, fertilizer=False) -> bool:
     # Plant carrot, if can't, plant tree or grass.
     rc = False
     # Limite to plant carrot
@@ -10,7 +10,7 @@ def plantCarrot(water=False, fertilizer=False):
         if get_entity_type() == Entities.Grass:
             harvest()
         if not get_ground_type() == Grounds.Soil:
-            trillstatus = till()
+            till()
         errorPlant = plant(Entities.Carrot)
         if not errorPlant:
             print("here")
@@ -22,11 +22,11 @@ def plantCarrot(water=False, fertilizer=False):
             plantTree()
         elif num_items(Items.Hay) <= 100:
             plant(Entities.Grass)
-        
+
         return rc
 
 
-def plantTree(water=False, fertilizer=False):
+def plantTree(water=False, fertilizer=False) -> None:
     # Plant Tree, if can't, plant bush.
     rc = False
 
@@ -48,7 +48,7 @@ def plantTree(water=False, fertilizer=False):
         plant(Entities.Bush)
 
 
-def plantPumpkin(water=False, fertilizer=False):
+def plantPumpkin(water=False, fertilizer=False) -> None:
     # Plant Pumpkin, if can't, plant Carrot.
     if not get_ground_type() == Grounds.Soil:
         till()
@@ -59,7 +59,7 @@ def plantPumpkin(water=False, fertilizer=False):
         plantCarrot(True, True)
 
 
-def waterAndFertilizer(water=False, fertilizer=False):
+def waterAndFertilizer(water=False, fertilizer=False) -> None:
     if num_items(Items.Water) >= 1 and water and get_water() <= 0.75:
         use_item(Items.Water)
     if num_items(Items.Fertilizer) >= 1 and fertilizer:
@@ -68,4 +68,4 @@ def waterAndFertilizer(water=False, fertilizer=False):
 
 if __name__ == "__main__":
     clear()
-    plantSomething() # type: ignore
+    plantSomething()  # type: ignore
