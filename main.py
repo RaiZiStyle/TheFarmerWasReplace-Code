@@ -1,4 +1,3 @@
-from typing import NoReturn
 from Harverse import harvestProcess
 from Utils import random_hat, showProgress
 
@@ -14,7 +13,7 @@ def walk_world(processFunction, showProgress=None, lastProgressShow=None) -> Non
         move(East)
 
 
-def main() -> NoReturn:
+def main():
     random_hat(False)
     lastProgressShow = get_time()
     while True:
