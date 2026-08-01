@@ -1,4 +1,4 @@
-from Harverse import USER_NEEDS
+from Harverse import USER_NEEDS, SUPPLY
 
 # Not really usefull function here
 PROGRESS_SHOW_TIME = 30  # Seconds
@@ -32,10 +32,12 @@ def showProgress(last_show: float, debug=False) -> float:
         return last_show
 
     time_str = seconds_to_dhms(now)
-    separator = "+" + "------------------------------" + "+"
+    separator = "+" + "==============================" + "+"
 
+    quick_print("")
     quick_print(separator)
     quick_print("| [" + time_str + "] Progress Report")
+    separator = "+" + "------------------------------" + "+"
     quick_print(separator)
 
     for need in USER_NEEDS:
@@ -49,6 +51,28 @@ def showProgress(last_show: float, debug=False) -> float:
         line = (
             "| "
             + pad_right(need["TEXT"], 15)
+            + bar
+            + " "
+            + pad_left(current, 4)
+            + " / "
+            + pad_left(wanted, 4)
+            + " ("
+            + pad_left(percent, 3)
+            + "%)"
+        )
+        quick_print(line)
+
+    for supply in SUPPLY:
+        current = num_items(supply["NAME"])
+        wanted  = supply["WANTED"]
+        percent = (current * 100) // wanted
+
+        bar_filled = percent // 10
+        bar = "[" + repeat_char("#", bar_filled) + repeat_char(".", 10 - bar_filled) + "]"
+
+        line = (
+            "| "
+            + pad_right(supply["TEXT"], 15)
             + bar
             + " "
             + pad_left(current, 4)
