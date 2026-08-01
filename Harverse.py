@@ -1,9 +1,9 @@
 from Plants import plantHay, plantCarrot, plantPumpkin, plantTree
 
-WANTED_PUMPKIN = 10000
-WANTED_WOOD = 54000
-WANTED_CARROT = 3000
-WANTED_HAY = 30000
+WANTED_PUMPKIN = 640000
+WANTED_WOOD = 100000
+WANTED_CARROT = 30000
+WANTED_HAY = 300000
 
 
 def harvestProcess() -> None:
