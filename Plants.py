@@ -62,6 +62,8 @@ def plantPumpkin(water=False, fertilizer=False) -> None:
 def waterAndFertilizer(water=False, fertilizer=False) -> None:
     if num_items(Items.Water) >= 1 and water and get_water() <= 0.75:
         use_item(Items.Water)
+        if num_items(Items.Water) >= 1 and water and get_water() <= 0.75:
+            use_item(Items.Water)
     if num_items(Items.Fertilizer) >= 1 and fertilizer:
         use_item(Items.Fertilizer)
 

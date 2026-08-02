@@ -1,4 +1,4 @@
-from Harverse import USER_NEEDS, SUPPLY
+from Harverse import USER_NEEDS
 
 # Not really usefull function here
 PROGRESS_SHOW_TIME = 30  # Seconds
@@ -12,6 +12,9 @@ myHats = [
     Hats.Straw_Hat,
 ]
 limiteHats = len(myHats)
+
+
+
 
 
 def random_hat(imIaWizzard=False):
@@ -42,50 +45,43 @@ def showProgress(last_show: float, debug=False) -> float:
 
     for need in USER_NEEDS:
         current = num_items(need["NAME"])
-        wanted  = need["WANTED"]
+        wanted = need["WANTED"]
         percent = (current * 100) // wanted
 
         bar_filled = percent // 10
         bar = "[" + repeat_char("#", bar_filled) + repeat_char(".", 10 - bar_filled) + "]"
 
         line = (
-            "| "
-            + pad_right(need["TEXT"], 15)
-            + bar
-            + " "
-            + pad_left(current, 4)
-            + " / "
-            + pad_left(wanted, 4)
-            + " ("
-            + pad_left(percent, 3)
-            + "%)"
+            "| " + pad_right(need["TEXT"], 15) + bar + " " + pad_left(current, 4) + " / " + pad_left(wanted, 4) + " (" + pad_left(percent, 3) + "%)"
         )
         quick_print(line)
 
-    for supply in SUPPLY:
-        current = num_items(supply["NAME"])
-        wanted  = supply["WANTED"]
-        percent = (current * 100) // wanted
+    # BUGFIX : Supply debug
+    # for supply in SUPPLY:
+    #     currentSupply = num_items(supply["NAME"])
+    #     wanted  = supply["WANTED"]
+    #     percent = (currentSupply * 100) // wanted
 
-        bar_filled = percent // 10
-        bar = "[" + repeat_char("#", bar_filled) + repeat_char(".", 10 - bar_filled) + "]"
+    #     bar_filled = percent // 10
+    #     bar = "[" + repeat_char("#", bar_filled) + repeat_char(".", 10 - bar_filled) + "]"
 
-        line = (
-            "| "
-            + pad_right(supply["TEXT"], 15)
-            + bar
-            + " "
-            + pad_left(current, 4)
-            + " / "
-            + pad_left(wanted, 4)
-            + " ("
-            + pad_left(percent, 3)
-            + "%)"
-        )
-        quick_print(line)
+    #     line = (
+    #         "| "
+    #         + pad_right(supply["TEXT"], 15)
+    #         + bar
+    #         + " "
+    #         + pad_left(current, 4)
+    #         + " / "
+    #         + pad_left(wanted, 4)
+    #         + " ("
+    #         + pad_left(percent, 3)
+    #         + "%)"
+    #     )
+    #     quick_print(line)
 
     quick_print(separator)
     return now
+
 
 def repeat_char(char, count):
     result = ""
@@ -93,13 +89,16 @@ def repeat_char(char, count):
         result = result + char
     return result
 
+
 def pad_left(value, width):
     s = str(value)
-    return repeat_char(" ",(width - len(s))) + s
+    return repeat_char(" ", (width - len(s))) + s
+
 
 def pad_right(value, width):
     s = str(value)
-    return s + repeat_char(" ",  (width - len(s)))
+    return s + repeat_char(" ", (width - len(s)))
+
 
 def random_elem(list):
     index = random() * len(list) // 1
@@ -115,6 +114,9 @@ def seconds_to_dhms(seconds: float) -> str:
     s = seconds % 60
     rc = str(d) + "D" + str(h) + "H" + str(m) + "m" + str(s) + "s"
     return rc
+
+
+
 
 
 if __name__ == "__main__":

@@ -5,5 +5,8 @@ HARVESTER   = "Harvester.py    : Priority-based harvesting with MAX value cap an
 UTILS       = "Utils.py        : Fun functions"
 
 # TODO : "Add Sunflower (power) and Maze plant types."
+# TODO : "Add polyculture "
 # TODO : "Introduce variable plants with random generation."
 # TODO : "Benchmark process durations using get_tick_count()."
+
+# IMPROVE: I think I have an issue with performance...
