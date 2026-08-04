@@ -20,9 +20,8 @@ def main():
     random_hat(False)
     lastProgressShow = get_time()
     while True:
-        
+
         walk_world(harvestProcess, showProgress, lastProgressShow)
-        
 
 
 #        showProgress(lastProgressShow)

@@ -14,9 +14,6 @@ myHats = [
 limiteHats = len(myHats)
 
 
-
-
-
 def random_hat(imIaWizzard=False):
     result_pseudoRandom = randomBaseOnPosition()
     change_hat(myHats[result_pseudoRandom])
@@ -51,9 +48,7 @@ def showProgress(last_show: float, debug=False) -> float:
         bar_filled = percent // 10
         bar = "[" + repeat_char("#", bar_filled) + repeat_char(".", 10 - bar_filled) + "]"
 
-        line = (
-            "| " + pad_right(need["TEXT"], 15) + bar + " " + pad_left(current, 4) + " / " + pad_left(wanted, 4) + " (" + pad_left(percent, 3) + "%)"
-        )
+        line = "| " + pad_right(need["TEXT"], 15) + bar + " " + pad_left(current, 4) + " / " + pad_left(wanted, 4) + " (" + pad_left(percent, 3) + "%)"
         quick_print(line)
 
     # BUGFIX : Supply debug
@@ -114,9 +109,6 @@ def seconds_to_dhms(seconds: float) -> str:
     s = seconds % 60
     rc = str(d) + "D" + str(h) + "H" + str(m) + "m" + str(s) + "s"
     return rc
-
-
-
 
 
 if __name__ == "__main__":

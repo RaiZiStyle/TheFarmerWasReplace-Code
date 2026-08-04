@@ -1,0 +1,13 @@
+{
+    "flake8.args": [
+        "--extend-ignore=F821,F811",
+        "--max-line-length=180"
+    ],
+    "black-formatter.args": [
+        "--line-length=180"
+    ],
+    "python.analysis.extraPaths": [
+        "."
+    ],
+    "python.analysis.stubPath": "."
+}
